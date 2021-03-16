@@ -1,3 +1,5 @@
+# This file is part of: github.com/pablocorbalann/secgenda
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -5,6 +7,10 @@ __pycache__/
 
 # C extensions
 *.so
+*.c
+*.h
+*.cpp
+*.o
 
 # Distribution / packaging
 .Python
@@ -127,3 +133,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Intel idea
+.idea/
