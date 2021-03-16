@@ -44,7 +44,7 @@ class Error(BaseException):
         ROUTE = "logs.txt"
         try:
             with open(ROUTE, "a") as f:
-                f.write(self.e_code)
+                f.write("\n" + self.e_code)
         except FileNotFoundError as e:
             e_code = "003"
             e = LogError(e_code, e, f"Can't find the logs route {ROUTE}")
