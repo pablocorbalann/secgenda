@@ -2,3 +2,4 @@
 001: Can't import internal modules
 002: Can't import the app package
 003: Secgenda can't find the logs route
+004: Can't find flask in python

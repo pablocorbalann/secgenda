@@ -1,0 +1,15 @@
+PAGE ROUTE              PAGE FILE                          DESCRIPTION
+===========================================================================================================
+
+BASIC PAGES
+-----------
+/                       index.html                         The principal page of secgenda, the "door" to it
+/wellcome               wellcome.html                      Is a page for actually checking what is secgenda
+/about                  about.html                         Shows information about the app
+/logs                   logs.html                          Shows the logs
+
+CONTACTS
+--------
+/c                      contacts.html                      The list of your contacts
+/c?id=contact           contact.html                       The page with information for a single contact
+/c/mail?id=contact      mail.html                          The page for sending a mail to the contact

@@ -13,7 +13,7 @@ This app has created with love by Pablo Corbalán (@pablocorbalann arround the i
 """
 try:
     from errors import RunError
-    from config import *
+    import configg
 except ImportError as e:
     e_code = "001"
     e_message = "Can't import interal modules that are needed"
@@ -21,12 +21,12 @@ except ImportError as e:
         # Maybe the import that failed is the import of the errors, so
         # in that case we can't log it
         e = RunError(e_code, e, e_message)
-        e.display()
+        e.show()
     except Exception as e:
         print(f"Can't log error {e_code}: {e}")
 
 try:
-    from app import app
+    import app
 except ImportError as e:
     e_code = "002"
     e_message = f"""
@@ -39,3 +39,6 @@ If the problem consists, please report an issue to our GitHub repository.
 """
     e = RunError(e_code, e, e_message)
     e.show()
+
+if __name__ == "__main__":
+    app.run(config.DEBUG, config.HOSTNAME, config.PORT) 

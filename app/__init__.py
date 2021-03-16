@@ -6,4 +6,4 @@ package.
 
 For more information check our github repository
 """
-from .views import *
+from .views import run

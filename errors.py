@@ -7,6 +7,14 @@ where all the errors inherit.
 
 More information at our github repository
 """
+errors = {} # error code: error description
+with open("errors.txt", "r") as f:
+    for line in f.read().splitlines():
+        l = line.split(":")
+        key = l[0].strip()
+        description = l[1].strip()
+        errors[key] = description
+
 class Error(BaseException):
     """
     This class is the parent class for all the errors, inherits from the Python
@@ -44,14 +52,15 @@ class Error(BaseException):
         ROUTE = "logs.txt"
         try:
             with open(ROUTE, "a") as f:
-                f.write("\n" + self.e_code)
+                msg = f"[{self.e_code}]: {errors[self.e_code]}"
+                f.write(f"\n{msg}")
         except FileNotFoundError as e:
             e_code = "003"
             e = LogError(e_code, e, f"Can't find the logs route {ROUTE}")
-            e.display()
+            e.show()
         except Exception as e:
             e = Error("000", e)
-            e.display()
+            e.show()
 
     def show(self):
         """
@@ -65,3 +74,11 @@ class Error(BaseException):
 class RunError(Error):
     def __init__(self, e_code, e=None, e_message=""):
         super().__init__(e_code, e, e_message)
+
+class ViewsError(Error):
+    def __init__(self, e_code, e=None, e_message=""):
+        super().__init__(e_code, e, e_message)
+
+if __name__ == "__main__":
+    e = ViewsError("001", "example", "my error")
+    e.show()
