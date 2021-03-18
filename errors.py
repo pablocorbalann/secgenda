@@ -53,7 +53,7 @@ class Error(BaseException):
         try:
             with open(ROUTE, "a") as f:
                 msg = f"[{self.e_code}]: {errors[self.e_code]}"
-                f.write(f"\n{msg}")
+                f.write(f"{msg}\n")
         except FileNotFoundError as e:
             e_code = "003"
             e = LogError(e_code, e, f"Can't find the logs route {ROUTE}")

@@ -13,7 +13,7 @@ This app has created with love by Pablo Corbalán (@pablocorbalann arround the i
 """
 try:
     from errors import RunError
-    import configg
+    import config
 except ImportError as e:
     e_code = "001"
     e_message = "Can't import interal modules that are needed"

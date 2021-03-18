@@ -6,13 +6,13 @@ the views in the file "pages.txt". In this module the flask server
 instance is also initialiced.
 """
 from errors import ViewsError
-from data import load_logs
+from .data import load_logs
 
 try:
     from flask import Flask, render_template, url_for, redirect
 except ImportError as e:
     e = ViewsError("004", e, "Can't import flask, try to install it using pip")
-    e.display()
+    e.show()
 
 app = Flask(__name__)
 
@@ -26,9 +26,17 @@ def index():
 def wellcome():
     return render_template("wellcome.html")
 
+@app.route("/logs")
+def logs():
+    return redirect(url_for("classiclogs"))
+
+@app.route("/logs/classic")
+def classiclogs():
+    return redirect(url_for("oldlogs"))
+
 @app.route("/logs/old")
 def oldlogs():
-    return render_template("logs.txt", title="Logs Old version", logs=load_logs())
+    return render_template("logs/old.html", title="Logs Old version", logs_content=load_logs())
 
 def run(DEBUG, HOSTNAME, PORT):
     """
