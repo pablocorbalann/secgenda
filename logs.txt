@@ -2,3 +2,5 @@
 [004]: Can't find flask in python
 [001]: Can't import internal modules
 [004]: Can't find flask in python
+[002]: Can't import the app package
+[006]: Can't load a SQL query

@@ -79,6 +79,10 @@ class ViewsError(Error):
     def __init__(self, e_code, e=None, e_message=""):
         super().__init__(e_code, e, e_message)
 
+class DataError(Error):
+    def __init__(self, e_code, e=None, e_message=""):
+        super().__init__(e_code, e, e_message)
+
 if __name__ == "__main__":
     e = ViewsError("001", "example", "my error")
     e.show()

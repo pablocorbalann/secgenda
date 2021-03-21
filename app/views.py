@@ -7,6 +7,7 @@ instance is also initialiced.
 """
 from errors import ViewsError
 from .data import load_logs
+from .db import query
 
 try:
     from flask import Flask, render_template, url_for, redirect
@@ -20,6 +21,7 @@ app = Flask(__name__)
 # about the routes structure check the file pages.txt
 @app.route("/")
 def index():
+    query("example")
     return render_template("index.html")
 
 @app.route("/wellcome")
