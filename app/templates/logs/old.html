@@ -1,9 +1,13 @@
 {% extends "parent.html" %}
 
 {% block content %}
-<div class="old-logs-display">
+<div class="center">
   {% for log in logs_content %}
-  <p>{{ log }}</p>
+    <span class="red">[</span>
+    <span class="black">{{ log[1:4] }}</span>
+    <span class="red">]</span>
+    <span class="gray">{{ log[5:] }}</span>
+  </p>
   {% endfor %}
 </div>
 {% endblock content %}

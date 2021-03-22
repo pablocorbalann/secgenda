@@ -5,3 +5,4 @@
 [002]: Can't import the app package
 [006]: Can't load a SQL query
 [006]: Can't load a SQL query
+[006]: Can't load a SQL query

@@ -1,0 +1,9 @@
+{% extends "parent.html" %}
+
+{% block content %}
+<div>
+  {% for log in logs_content %}
+  <p>{{ log }}</p>
+  {% endfor %}
+</div>
+{% endblock content %}

@@ -45,6 +45,10 @@ def classiclogs():
 def oldlogs():
     return render_template("logs/old.html", title="Logs Old version", logs_content=load_logs())
 
+@app.route("/logs/old/html")
+def oldhtmllogs():
+    return render_template("logs/nostyle.html", title="Logs Old version - Pure HTML", logs_content=load_logs())
+
 def run(DEBUG, HOSTNAME, PORT, SQL_ROUTE):
     """
     This function actually runs the application using some

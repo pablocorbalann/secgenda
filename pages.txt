@@ -17,5 +17,7 @@ LOGS
 -----------
 /l                                                         Redirects to /logs
 /logs                                                      Redirects to /logs/classic
+/logs/codes            logs/codes.html                     Displays all the codes for the logs (errors.txt)
 /logs/classic          logs/classic.html                   The page that displays the error logs
-/logs/old              logs/old.html                       The same logs, but without any css
+/logs/old              logs/old.html                       The logs but with little css and no other content
+/logs/old              logs/nostyle.html                   The logs, but without any css

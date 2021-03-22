@@ -1,0 +1,16 @@
+* {
+  font-family: monospace;
+}
+
+.black {color:black;}
+.red {color:red;}
+.gray {color:lightgrey;}
+
+.bold {font-weight:bold;}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: none;
+  padding: 10px; 
+}
