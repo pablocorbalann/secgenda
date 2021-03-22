@@ -29,6 +29,26 @@ def index():
 def wellcome():
     return render_template("wellcome.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html", title="About")
+@app.route("/c")
+def contact():
+    contact = {
+        "id": "001",
+        "name": "Pablo",
+        "surname": "Corbalán de Concepción",
+        "email": "pablo.corbalan@protonmail.com",
+        "phone": "571-132-141",
+        "adress": "C/street1, Spain"
+    }
+    name = f"{contact['name']} {contact['surname']}"
+    return render_template("contact.html", title=name, contact=contact)
+
+@app.route("/c/mail")
+def contactmail():
+    pass
+
 @app.route("/l")
 def logsredirect():
     return redirect(url_for("logs"))
