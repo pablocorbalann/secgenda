@@ -6,3 +6,4 @@
 005: Can't set up a SQL connection
 006: Can't load a SQL query
 007: Can't create a SQL cursor
+008: Secgenda is not able to load a data file

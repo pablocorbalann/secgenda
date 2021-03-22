@@ -6,7 +6,7 @@ the views in the file "pages.txt". In this module the flask server
 instance is also initialiced.
 """
 from errors import ViewsError
-from .data import load_logs
+from .data import load_logs, load_logs_codes
 from .db import query, DataHandler, setup_table
 
 try:
@@ -37,6 +37,14 @@ def logsredirect():
 def logs():
     return redirect(url_for("classiclogs"))
 
+@app.route("/logs/codes")
+def logcodes():
+    return render_template("logs/codes.html", title="Logs error codes", codes=load_logs_codes())
+
+@app.route("/logs/codes/html")
+def logcodeshtml():
+    return render_template("logs/html/codes.html", title="Logs error codes - Pure HTML", codes=load_logs_codes()) 
+
 @app.route("/logs/classic")
 def classiclogs():
     return redirect(url_for("oldlogs"))
@@ -47,7 +55,7 @@ def oldlogs():
 
 @app.route("/logs/old/html")
 def oldhtmllogs():
-    return render_template("logs/nostyle.html", title="Logs Old version - Pure HTML", logs_content=load_logs())
+    return render_template("logs/html/old.html", title="Logs Old version - Pure HTML", logs_content=load_logs())
 
 def run(DEBUG, HOSTNAME, PORT, SQL_ROUTE):
     """
