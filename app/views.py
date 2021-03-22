@@ -29,6 +29,10 @@ def index():
 def wellcome():
     return render_template("wellcome.html")
 
+@app.route("/l")
+def logsredirect():
+    return redirect(url_for("logs"))
+
 @app.route("/logs")
 def logs():
     return redirect(url_for("classiclogs"))

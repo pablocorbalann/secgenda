@@ -1,0 +1,34 @@
+<!-- 
+This html file is part of: github.com/pablocorbalann/secgenda
+
+It belongs to "Secgenda", a secure contact agenda 100% open-source
+that is designed to run locally in your computer
+
+Created by Pablo Corbalán (@pablocorbalann arround the internet)
+
+Are you a developer and you are interested in Secgenda's code, check
+out the GitHub repository for more information about it, and files
+that explain all the parts of the code... and don't forget your star! :)
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+    <title>Secgenda · {{ title }}</title>
+    {% else %}
+    <title>Secgenda</title>
+    {% endif %}
+    {% if description %}
+    <meta name="description" content="{{ description }}">
+    {% else %}
+    <meta name="description" content="Secgenda is the most secure contact agenda in the world, it's 100% open source and has been built using a Python web server by Pablo Corbalán @pablocorbalann">
+    {% endif %}
+    <meta name="author" content="Pablo Corbalán De Concepción @pablocorbalann">
+    <meta name="copyright" content="Pablo Corbalán & contributors [C] 2021">
+    <meta name="license" content="Secgenda, under the MIT LICENSE">
+  </head>
+  <body>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>
