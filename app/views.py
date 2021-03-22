@@ -37,6 +37,10 @@ def logsredirect():
 def logs():
     return redirect(url_for("classiclogs"))
 
+@app.route("/l/c")
+def logcodesredirect():
+    return redirect(url_for("logcodes"))
+
 @app.route("/logs/codes")
 def logcodes():
     return render_template("logs/codes.html", title="Logs error codes", codes=load_logs_codes())
