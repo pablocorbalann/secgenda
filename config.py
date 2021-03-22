@@ -18,3 +18,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(__name__))
 
 # Application threads (don't touch it if you don't know what it is)
 THREADS_PER_PAGE=2
+
+# The name of the SQL DATABASE
+SQL_NAME = "contacts"
+SQL_ROUTE = f"app/db/{SQL_NAME}"

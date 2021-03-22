@@ -7,7 +7,7 @@ instance is also initialiced.
 """
 from errors import ViewsError
 from .data import load_logs
-from .db import query
+from .db import query, DataHandler, setup_table
 
 try:
     from flask import Flask, render_template, url_for, redirect
@@ -16,6 +16,7 @@ except ImportError as e:
     e.show()
 
 app = Flask(__name__)
+dh = None
 
 # Now we can declarate every route from here to the end of the file, if you need more information 
 # about the routes structure check the file pages.txt
@@ -40,10 +41,13 @@ def classiclogs():
 def oldlogs():
     return render_template("logs/old.html", title="Logs Old version", logs_content=load_logs())
 
-def run(DEBUG, HOSTNAME, PORT):
+def run(DEBUG, HOSTNAME, PORT, SQL_ROUTE):
     """
     This function actually runs the application using some
     configuration variables located at the config module. 
     This function has to be runned from the run.py file
     """
+    global dh
+    dh = DataHandler(SQL_ROUTE)
+    setup_table(dh)
     app.run(host=HOSTNAME, debug=DEBUG, port=PORT)

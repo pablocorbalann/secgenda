@@ -41,4 +41,4 @@ If the problem consists, please report an issue to our GitHub repository.
     e.show()
 
 if __name__ == "__main__":
-    app.run(config.DEBUG, config.HOSTNAME, config.PORT) 
+    app.run(config.DEBUG, config.HOSTNAME, config.PORT, config.SQL_ROUTE)

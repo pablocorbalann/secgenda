@@ -5,3 +5,4 @@
 004: Can't find flask in python
 005: Can't set up a SQL connection
 006: Can't load a SQL query
+007: Can't create a SQL cursor
