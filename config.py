@@ -9,7 +9,7 @@ sentences mean, better you don't touch anything :)
 DEBUG=True
 
 # The configuration of the flask server
-PORT=8080
+PORT=8888
 HOSTNAME="127.0.0.1"
 
 # Define the application directory using the OS library
